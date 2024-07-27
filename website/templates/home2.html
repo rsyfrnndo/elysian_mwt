@@ -55,20 +55,42 @@
             width: 100%;
             height: auto;
         }
-
-        .polaroid p {
+        .polaroid .nama {
             color: #0076d6;
             font-weight: bold;
+            text-decoration: none;
+            position: relative;
+            display: inline-block;
+            transition: color 0.3s ease;
         }
-
-        .polaroid p:hover {
+        .polaroid .nama:hover {
             background-color: #0076d6;
             color: white;
             border-radius: 10px;
             padding: 5px;
             font-size: 0.9rem;
         }
-
+        .polaroid .nama:hover .instagram {
+            display: block;
+        }
+        .instagram {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #0076d6;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            z-index: 1;
+            text-decoration: none;
+        }
+        .instagram:hover {
+            background-color: #005bb5;
+        }
         .specialization {
             background-color: #0076d6;
             color: white;
@@ -149,23 +171,35 @@
             <h2>Elysian here.</h2>
             <div class="polaroid-container">
                 <div class="polaroid">
-                    <img src="static/rasya.jpg" alt="rasya">
-                    <p class="nama">Rasya Fernando</p>
+                    <img src="{{ url_for('static', filename='rasya.jpg') }}" alt="rasya">
+                    <a href="https://instagram.com/rsyfrnndo" class="nama">
+                        Rasya Fernando
+                        <span class="instagram">@rsyfrnndo</span>
+                    </a>
                     <div class="specialization">Electrical and Mechanical Engineer</div>
                 </div>
                 <div class="polaroid">
-                    <img src="static/fakhri.jpg" alt="fakhri">
-                    <p class="nama">Ahmad Fakhri</p>
+                    <img src="{{ url_for('static', filename='fakhri.jpg') }}" alt="fakhri">
+                    <a href="https://instagram.com/fakhriaall" class="nama">
+                        Ahmad Fakhri
+                        <span class="instagram">@fakhriaall</span>
+                    </a>
                     <div class="specialization">IoT Engineer</div>
                 </div>
                 <div class="polaroid">
-                    <img src="static/habibah.png" alt="habibah">
-                    <p class="nama">Habibah Hisani</p>
+                    <img src="{{ url_for('static', filename='habibah.png') }}" alt="habibah">
+                    <a href="https://instagram.com/h.bbh_02" class="nama">
+                        Habibah Hisani
+                        <span class="instagram">@h.bbh_02</span>
+                    </a>
                     <div class="specialization">Data Analyst</div>
                 </div>
                 <div class="polaroid">
-                    <img src="static/sipa.jpg" alt="siti">
-                    <p class="nama">Siti Lavifa</p>
+                    <img src="{{ url_for('static', filename='sipa.jpg') }}" alt="siti">
+                    <a href="https://instagram.com/stilfva" class="nama">
+                        Siti Lavifa
+                        <span class="instagram">@stilfva</span>
+                    </a>
                     <div class="specialization">Hardware Designer</div>
                 </div>
             </div>
