@@ -60,7 +60,6 @@
             font-weight: bold;
             text-decoration: none;
             position: relative;
-            display: inline-block;
             transition: color 0.3s ease;
         }
         .polaroid .nama:hover {
@@ -70,26 +69,16 @@
             padding: 5px;
             font-size: 0.9rem;
         }
-        .polaroid .nama:hover .instagram {
-            display: block;
-        }
-        .instagram {
+        .polaroid .nama::after {
+            content: attr(data-username); /* Menggunakan atribut data-username */
             display: none;
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: white;
-            color: #0076d6;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            white-space: nowrap;
-            z-index: 1;
-            text-decoration: none;
+            color: white;
         }
-        .instagram:hover {
-            background-color: #005bb5;
+        .polaroid .nama:hover::after {
+            display: inline;
+        }
+        .polaroid .nama:hover span {
+            display: none;
         }
         .specialization {
             background-color: #0076d6;
@@ -172,33 +161,29 @@
             <div class="polaroid-container">
                 <div class="polaroid">
                     <img src="{{ url_for('static', filename='rasya.jpg') }}" alt="rasya">
-                    <a href="https://instagram.com/rsyfrnndo" class="nama">
-                        Rasya Fernando
-                        <span class="instagram">@rsyfrnndo</span>
+                    <a href="https://instagram.com/rsyfrnndo" class="nama" data-username="@rsyfrnndo">
+                        <span>Rasya Fernando</span>
                     </a>
                     <div class="specialization">Electrical and Mechanical Engineer</div>
                 </div>
                 <div class="polaroid">
                     <img src="{{ url_for('static', filename='fakhri.jpg') }}" alt="fakhri">
-                    <a href="https://instagram.com/fakhriaall" class="nama">
-                        Ahmad Fakhri
-                        <span class="instagram">@fakhriaall</span>
+                    <a href="https://instagram.com/fakhriaall" class="nama" data-username="@fakhriaall">
+                        <span>Ahmad Fakhri</span>
                     </a>
                     <div class="specialization">IoT Engineer</div>
                 </div>
                 <div class="polaroid">
                     <img src="{{ url_for('static', filename='habibah.png') }}" alt="habibah">
-                    <a href="https://instagram.com/h.bbh_02" class="nama">
-                        Habibah Hisani
-                        <span class="instagram">@h.bbh_02</span>
+                    <a href="https://instagram.com/h.bbh_02" class="nama" data-username="@h.bbh_02">
+                        <span>Habibah Hisani</span>
                     </a>
                     <div class="specialization">Data Analyst</div>
                 </div>
                 <div class="polaroid">
                     <img src="{{ url_for('static', filename='sipa.jpg') }}" alt="siti">
-                    <a href="https://instagram.com/stilfva" class="nama">
-                        Siti Lavifa
-                        <span class="instagram">@stilfva</span>
+                    <a href="https://instagram.com/stilfva" class="nama" data-username="@stilfva">
+                        <span>Siti Lavifa</span>
                     </a>
                     <div class="specialization">Hardware Designer</div>
                 </div>
